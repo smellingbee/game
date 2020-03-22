@@ -73,15 +73,23 @@ const App = () => {
 
         return (
             <div className="App">
-                <div className="dates-container">
+                <div className="dates-container-large">
                     <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
-                        <div className="back-arrow">{"<"}</div>
-                        {`${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}, ${prevDate.getFullYear()}`}
+                        {`< ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}, ${prevDate.getFullYear()}`}
                     </div>
                     <div
                         className="current-date">{`${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}, ${currentDate.getFullYear()}`}</div>
-                    <div className="next-date" onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()}`}
-                        <div className="next-arrow">{">"}</div>
+                    <div className="next-date" onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()} >`}
+                    </div>
+                </div>
+
+                <div className="dates-container-small">
+                    <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
+                        {`<  ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}`}
+                    </div>
+                    <div
+                        className="current-date">{`${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}`}</div>
+                    <div className="next-date" onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}  >`}
                     </div>
                 </div>
                 <div className="game-content-container">

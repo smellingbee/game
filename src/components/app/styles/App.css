@@ -106,7 +106,7 @@
   font-weight: lighter;
 }
 
-.dates-container {
+.dates-container-large, .dates-container-small {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -116,26 +116,23 @@
   user-select: none;
 }
 
+.dates-container-small {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .dates-container-large {
+    display: none;
+  }
+  .dates-container-small {
+    display: flex;
+  }
+}
+
 .previous-date, .next-date{
   display: flex;
   flex-direction: row;
   cursor: pointer;
-}
-
-.back-arrow, .next-arrow {
-  margin-top: -1px;
-  width: 28px;
-  height: 28px;
-  opacity: 1;
-  font-weight: 300;
-}
-
-.back-arrow {
-  margin-right: -11px;
-}
-
-.next-arrow {
-  margin-left: 11px;
 }
 
 .missed-item {
