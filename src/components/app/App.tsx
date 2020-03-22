@@ -61,6 +61,10 @@ const App = () => {
             setMissed(answers.filter(answer => !found.includes(answer)));
         };
 
+        const handleDateSelect = (event: any) => {
+            setCurrentDate(new Date(event.target.value));
+        };
+
         const nonCoreLetters = allowedLetters.filter(letter => letter !== coreLetter);
 
         useEffect(() => {
@@ -77,9 +81,22 @@ const App = () => {
                     <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
                         {`< ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}, ${prevDate.getFullYear()}`}
                     </div>
-                    <div
-                        className="current-date">{`${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}, ${currentDate.getFullYear()}`}</div>
-                    <div className="next-date" onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()} >`}
+                    <div className="current-date">
+                        <select id="date-selector" onChange={handleDateSelect}>
+                            {_.range(365).map((day: number) => {
+                                const newDate = new Date(currentDate.getTime() - (dayMillis * day));
+                                return (
+                                    <option
+                                        key={day}
+                                        value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
+                                        {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
+                                    </option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                    <div className="next-date"
+                         onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()} >`}
                     </div>
                 </div>
 
@@ -89,9 +106,11 @@ const App = () => {
                     </div>
                     <div
                         className="current-date">{`${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}`}</div>
-                    <div className="next-date" onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}  >`}
+                    <div className="next-date"
+                         onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}  >`}
                     </div>
                 </div>
+
                 <div className="game-content-container">
                     <div className="letters">
                         {nonCoreLetters.slice(0, 3)}
