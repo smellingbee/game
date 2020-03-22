@@ -7,6 +7,12 @@
   width: 50%;
 }
 
+@media only screen and (max-width: 600px) {
+  .game-content-container {
+    width: 90%;
+  }
+}
+
 .letters {
   display: flex;
   flex-direction: row;
@@ -135,3 +141,4 @@
 .missed-item {
   color: #B71C1C;
 }
+
