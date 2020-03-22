@@ -35,7 +35,7 @@ const App = () => {
         };
 
         const handleGuess = (event: React.KeyboardEvent<HTMLInputElement>) => {
-            const guess = event.currentTarget.value;
+            const guess = event.currentTarget.value.toLowerCase();
             let keyCode = event.which || event.keyCode;
             if (keyCode === 13) {
                 event.currentTarget.value = '';
