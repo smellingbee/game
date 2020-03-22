@@ -74,6 +74,7 @@ const App = () => {
         const dayMillis = 24 * 60 * 60 * 1000;
         const prevDate = new Date(currentDate.getTime() - dayMillis);
         const nextDate = new Date(currentDate.getTime() + dayMillis);
+        const today = new Date(Date.now());
 
         return (
             <div className="App">
@@ -84,7 +85,7 @@ const App = () => {
                     <div className="current-date">
                         <select id="date-selector" onChange={handleDateSelect}>
                             {_.range(365).map((day: number) => {
-                                const newDate = new Date(currentDate.getTime() - (dayMillis * day));
+                                const newDate = new Date(today.getTime() - (dayMillis * day));
                                 return (
                                     <option
                                         key={day}
