@@ -84,7 +84,7 @@ const App = () => {
                     </div>
                     <div className="current-date">
                         <select id="date-selector" onChange={handleDateSelect}>
-                            {_.range(1000).map((day: number) => {
+                            {_.range(438).map((day: number) => {
                                 const newDate = new Date(today.getTime() - (dayMillis * day));
                                 return (
                                     <option
