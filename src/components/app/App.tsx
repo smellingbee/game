@@ -76,26 +76,34 @@ const App = () => {
         const nextDate = new Date(currentDate.getTime() + dayMillis);
         const today = new Date(Date.now());
 
+        const currentDateContainer =
+            <div className="current-date">
+                <select id="date-selector" onChange={handleDateSelect}>
+                    {_.range(438).map((day: number) => {
+                        const newDate = new Date(today.getTime() - (dayMillis * day));
+                        return (
+                            <option
+                                key={day}
+                                selected={
+                                    newDate.getDate() === currentDate.getDate() &&
+                                    newDate.getMonth() === currentDate.getMonth() &&
+                                    newDate.getFullYear() === currentDate.getFullYear()
+                                }
+                                value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
+                                {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
+                            </option>
+                        )
+                    })}
+                </select>
+            </div>;
+
         return (
             <div className="App">
                 <div className="dates-container-large">
                     <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
                         {`< ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}, ${prevDate.getFullYear()}`}
                     </div>
-                    <div className="current-date">
-                        <select id="date-selector" onChange={handleDateSelect}>
-                            {_.range(438).map((day: number) => {
-                                const newDate = new Date(today.getTime() - (dayMillis * day));
-                                return (
-                                    <option
-                                        key={day}
-                                        value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
-                                        {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
-                                    </option>
-                                )
-                            })}
-                        </select>
-                    </div>
+                    {currentDateContainer}
                     <div className="next-date"
                          onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()} >`}
                     </div>
@@ -105,20 +113,7 @@ const App = () => {
                     <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
                         {`<  ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}`}
                     </div>
-                    <div className="current-date">
-                        <select id="date-selector" onChange={handleDateSelect}>
-                            {_.range(365).map((day: number) => {
-                                const newDate = new Date(currentDate.getTime() - (dayMillis * day));
-                                return (
-                                    <option
-                                        key={day}
-                                        value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
-                                        {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
-                                    </option>
-                                )
-                            })}
-                        </select>
-                    </div>
+                    {currentDateContainer}
                     <div className="next-date"
                          onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}  >`}
                     </div>

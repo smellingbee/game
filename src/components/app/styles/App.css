@@ -139,8 +139,11 @@
 .missed-item {
   color: #B71C1C;
 }
-
-.date-selector {
+select {
   font-size: inherit;
   text-align-last: center;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
