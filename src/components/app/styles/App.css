@@ -46,8 +46,8 @@
 .guess-feedback__outer-container {
   position: absolute;
   top: 145px;
-  left: 0;
-  width: 100%;
+  left: -50%;
+  width: 200%;
   height: 100%;
   pointer-events: none;
   text-align: center;
@@ -61,6 +61,7 @@
   transition-property: opacity, margin-top, font-size;
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
+  white-space: nowrap;
 }
 
 .guess_feedback__correct {
