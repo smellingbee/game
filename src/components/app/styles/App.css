@@ -140,3 +140,7 @@
   color: #B71C1C;
 }
 
+.date-selector {
+  font-size: inherit;
+  text-align-last: center;
+}
