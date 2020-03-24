@@ -1,30 +1,53 @@
 import React, {useEffect, useState} from 'react';
 import './styles/App.css';
-import {getAllowedLetters, getAnswersOfDate, getCoreLetter, monthNames} from "../../api/archiveScraper";
+import {getAllowedLetters, getAnswersOfDate, getCoreLetter} from "../../api/archiveScraper";
+import {DateHeader} from "../dateHeader/DateHeader";
+import Cookies from 'universal-cookie';
 
 const _ = require('lodash');
+const cookies = new Cookies();
+const storedCurrentDate = cookies.get('current_date');
+let initialCurrentDate = new Date();
+if (storedCurrentDate) {
+    initialCurrentDate = new Date(storedCurrentDate);
+}
 
 const App = () => {
         const [answers, setAnswers] = useState<string[]>([]);
-        const [allowedLetters, setAllowedLetters] = useState<string[]>([]);
+        const [allowedLetters, setAllowedLetters] = useState<string[]>(['loading...']);
         const [coreLetter, setCoreLetter] = useState<string>('');
         const [guessFeedback, setGuessFeedback] = useState<string>('');
+        const [currentDate, setCurrentDate] = useState<Date>(initialCurrentDate);
         const [found, setFound] = useState<string[]>([]);
         const [missed, setMissed] = useState<string[]>([]);
-        const [currentDate, setCurrentDate] = useState<Date>(new Date(Date.now()));
 
         const initializeGame = async () => {
             setFound([]);
             setMissed([]);
+            setAllowedLetters(['loading...']);
+            setAnswers([]);
+            setCoreLetter('');
+
             let answers: string[] = await getAnswersOfDate(currentDate);
             let allowedLetters: string[] = getAllowedLetters(answers);
             setAnswers(answers);
-            setAllowedLetters(allowedLetters);
             setCoreLetter(getCoreLetter(allowedLetters, answers));
+            if (allowedLetters.length === 0) {
+                allowedLetters = ['Error']
+            }
+            setAllowedLetters(allowedLetters);
+            const savedProgress = cookies.get(currentDate.toDateString());
+            if (savedProgress) {
+                setFound(savedProgress);
+            }
         };
 
-        const shuffleLetters = () => {
-            setAllowedLetters(_.shuffle(allowedLetters));
+        const handleRefreshButtonClick = () => {
+            if (allowedLetters[0].length > 1) {
+                initializeGame();
+            } else {
+                setAllowedLetters(_.shuffle(allowedLetters));
+            }
         };
 
         const displayFeedback = (feedback: string) => {
@@ -42,89 +65,44 @@ const App = () => {
                 if (guess.length <= 3) {
                     displayFeedback("Too short");
                 } else if (!answers.includes(guess)) {
-                    if (Math.random() < 0.1) {
-                        displayFeedback("Fuck you");
-                    } else {
-                        displayFeedback("Nope");
-                    }
+                    displayFeedback("Nope");
                 } else if (found.includes(guess)) {
                     displayFeedback("Already found");
                 } else {
                     displayFeedback("Nice!");
                     found.push(guess);
                     setFound(found);
+                    cookies.set(currentDate.toDateString(), JSON.stringify(found));
                 }
             }
         };
 
-        const handleDone = () => {
-            setMissed(answers.filter(answer => !found.includes(answer)));
-        };
-
-        const handleDateSelect = (event: any) => {
-            setCurrentDate(new Date(event.target.value));
+        const toggleAnswers = () => {
+            if (missed.length) {
+                setMissed([]);
+            } else {
+                setMissed(answers.filter(answer => !found.includes(answer)));
+            }
         };
 
         const nonCoreLetters = allowedLetters.filter(letter => letter !== coreLetter);
 
         useEffect(() => {
             initializeGame();
+            cookies.set('current_date', JSON.stringify(currentDate));
         }, [currentDate]);
 
-        const dayMillis = 24 * 60 * 60 * 1000;
-        const prevDate = new Date(currentDate.getTime() - dayMillis);
-        const nextDate = new Date(currentDate.getTime() + dayMillis);
-        const today = new Date(Date.now());
-
-        const currentDateContainer =
-            <div className="current-date">
-                <select id="date-selector" onChange={handleDateSelect}>
-                    {_.range(438).map((day: number) => {
-                        const newDate = new Date(today.getTime() - (dayMillis * day));
-                        return (
-                            <option
-                                key={day}
-                                selected={
-                                    newDate.getDate() === currentDate.getDate() &&
-                                    newDate.getMonth() === currentDate.getMonth() &&
-                                    newDate.getFullYear() === currentDate.getFullYear()
-                                }
-                                value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
-                                {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
-                            </option>
-                        )
-                    })}
-                </select>
-            </div>;
 
         return (
             <div className="App">
-                <div className="dates-container-large">
-                    <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
-                        {`< ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}, ${prevDate.getFullYear()}`}
-                    </div>
-                    {currentDateContainer}
-                    <div className="next-date"
-                         onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}, ${nextDate.getFullYear()} >`}
-                    </div>
-                </div>
-
-                <div className="dates-container-small">
-                    <div className="previous-date" onClick={() => setCurrentDate(prevDate)}>
-                        {`<  ${monthNames[prevDate.getMonth()]} ${prevDate.getDate()}`}
-                    </div>
-                    {currentDateContainer}
-                    <div className="next-date"
-                         onClick={() => setCurrentDate(nextDate)}>{`${monthNames[nextDate.getMonth()]} ${nextDate.getDate()}  >`}
-                    </div>
-                </div>
-
+                <DateHeader currentDate={currentDate} setCurrentDate={setCurrentDate}/>
                 <div className="game-content-container">
                     <div className="letters">
                         {nonCoreLetters.slice(0, 3)}
                         <span className="core-letter">{coreLetter}</span>
                         {nonCoreLetters.slice(3)}
-                        <svg className="refresh-icon" onClick={shuffleLetters} aria-hidden="true" focusable="false"
+                        <svg className="refresh-icon" onClick={handleRefreshButtonClick} aria-hidden="true"
+                             focusable="false"
                              data-prefix="fas" data-icon="sync"
                              role="img" xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 512 512">
@@ -144,7 +122,9 @@ const App = () => {
                             )}
                         </div>
                         <div className="bottom-right-panel">
-                            <div className="done-container" onClick={handleDone}>Show Answers</div>
+                            <div className="done-container" onClick={toggleAnswers}>
+                                {missed.length ? 'Hide Answers' : 'Show Answers'}
+                            </div>
                             <div className="num-remaining-container">{`${found.length}/${answers.length} found`}</div>
                         </div>
                     </div>

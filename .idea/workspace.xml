@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
+    <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="Using cookies to auto-save progress">
+      <change afterPath="$PROJECT_DIR$/src/components/dateHeader/DateHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/styles/App.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,9 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/components/dateHeader/DateHeader.tsx" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/app/static" />
       <recent name="$PROJECT_DIR$/src" />
@@ -98,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584767768714</updated>
-      <workItem from="1584767769928" duration="32422000" />
+      <workItem from="1584767769928" duration="39486000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -177,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584908232335</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="styled date dropdown">
+      <created>1584908890451</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1584908890451</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,13 +206,15 @@
     <MESSAGE value="date dropdown - 3" />
     <MESSAGE value="date dropdown - more options" />
     <MESSAGE value="date dropdown - fewer options" />
-    <option name="LAST_COMMIT_MESSAGE" value="date dropdown - fewer options" />
+    <MESSAGE value="styled date dropdown" />
+    <MESSAGE value="Using cookies to auto-save progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using cookies to auto-save progress" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1584908232233">
+    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585013800900">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1584908232233" />
+    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585013800900" />
     <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1584779465683">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
