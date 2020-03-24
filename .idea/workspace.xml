@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="Using cookies to auto-save progress">
-      <change afterPath="$PROJECT_DIR$/src/components/dateHeader/DateHeader.tsx" afterDir="false" />
+    <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584767768714</updated>
-      <workItem from="1584767769928" duration="39486000" />
+      <workItem from="1584767769928" duration="40355000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -189,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584908890451</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Using cookies to auto-save progress">
+      <created>1585013821089</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585013821089</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,10 +215,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Using cookies to auto-save progress" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585013800900">
+    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585013820969">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585013800900" />
+    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585013820969" />
     <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1584779465683">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

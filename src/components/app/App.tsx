@@ -12,6 +12,13 @@ if (storedCurrentDate) {
     initialCurrentDate = new Date(storedCurrentDate);
 }
 
+const setCookie = (key: string, value: string) => {
+    cookies.set(key, value, {
+        path: '/',
+        expires: new Date("January 1 2050"),
+    })
+};
+
 const App = () => {
         const [answers, setAnswers] = useState<string[]>([]);
         const [allowedLetters, setAllowedLetters] = useState<string[]>(['loading...']);
@@ -72,7 +79,7 @@ const App = () => {
                     displayFeedback("Nice!");
                     found.push(guess);
                     setFound(found);
-                    cookies.set(currentDate.toDateString(), JSON.stringify(found));
+                    setCookie(currentDate.toDateString(), JSON.stringify(found));
                 }
             }
         };
@@ -89,7 +96,7 @@ const App = () => {
 
         useEffect(() => {
             initializeGame();
-            cookies.set('current_date', JSON.stringify(currentDate));
+            setCookie('current_date', JSON.stringify(currentDate));
         }, [currentDate]);
 
 
