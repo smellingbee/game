@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dateHeader/DateHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dateHeader/DateHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +102,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584767768714</updated>
-      <workItem from="1584767769928" duration="44967000" />
+      <workItem from="1584767769928" duration="46027000" />
+      <workItem from="1585427267727" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585072929377</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="more available dates and prevent scrolling x">
+      <created>1585355875451</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585355875451</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,37 +230,42 @@
     <MESSAGE value="styled date dropdown" />
     <MESSAGE value="Using cookies to auto-save progress" />
     <MESSAGE value="longer expiration time for cookies" />
-    <option name="LAST_COMMIT_MESSAGE" value="longer expiration time for cookies" />
+    <MESSAGE value="more available dates and prevent scrolling x" />
+    <option name="LAST_COMMIT_MESSAGE" value="more available dates and prevent scrolling x" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585072929276">
+    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585355875303">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585072929276" />
-    <state x="17" y="100" key="DiffContextDialog" timestamp="1585072925118">
+    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585355875303" />
+    <state x="17" y="100" key="DiffContextDialog" timestamp="1585355855972">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="17" y="100" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1585072925118" />
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1584779465683">
+    <state x="17" y="100" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1585355855972" />
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1585368492126">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1584779465683" />
-    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1584779465683">
+    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1585368492126" />
+    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1585368492125">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1584779465683" />
-    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1584779465682">
+    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1585368492125" />
+    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1585368492109">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1584779465682" />
-    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1584779465683">
+    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1585368492109" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1585368492125">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1584779465683" />
+    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1585368492125" />
     <state x="308" y="211" key="IDE.errors.dialog" timestamp="1584817829849">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="308" y="211" key="IDE.errors.dialog/0.23.1440.877@0.23.1440.877" timestamp="1584817829849" />
+    <state x="397" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1585427267497">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="397" y="294" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1585427267497" />
     <state x="143" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584770335444">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
