@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useMemo} from "react";
 import {monthNames} from "../../api/archiveScraper";
 const _ = require('lodash');
 
@@ -18,19 +18,33 @@ export const DateHeader: FC<DateHeaderProps> = (props) => {
         props.setCurrentDate(new Date(event.target.value));
     };
 
+    const availableDates = useMemo(() => {
+        const availableDates = [];
+        let newDate = today;
+        let day = 1;
+        while (newDate >= new Date("January 10, 2019")) {
+            availableDates.push(newDate);
+            newDate = new Date(today.getTime() - (dayMillis * day));
+            day++;
+        }
+        return availableDates;
+    }, [today]);
+
     const selectDate =
         <div className="current-date">
-            <select id="date-selector" onChange={handleDateSelect} value={`${monthNames[props.currentDate.getMonth()]} ${props.currentDate.getDate()}, ${props.currentDate.getFullYear()}`}>
-                {_.range(438).map((day: number) => {
-                    const newDate = new Date(today.getTime() - (dayMillis * day));
-                    return (
-                        <option
-                            key={day}
-                            value={`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}>
-                            {`${monthNames[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()}`}
-                        </option>
-                    )
-                })}
+            <select
+                id="date-selector"
+                onChange={handleDateSelect}
+                value={`${monthNames[props.currentDate.getMonth()]} ${props.currentDate.getDate()}, ${props.currentDate.getFullYear()}`}
+            >
+                { availableDates.map((date: Date, index: number) => (
+                            <option
+                                key={index}
+                                value={`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}>
+                                {`${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`}
+                            </option>
+                        )
+                )}
             </select>
         </div>;
 
