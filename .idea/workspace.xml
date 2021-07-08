@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/archiveScraper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/archiveScraper.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +13,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="ad87e049-7ff8-4705-bd54-b6247291efc6" />
   <component name="ProjectId" id="1ZQOI7f4CV2j7T9UyZFq3c99bnI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -46,7 +45,7 @@
       <recent name="$PROJECT_DIR$/src/components/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.archive scraper">
+  <component name="RunManager" selected="npm.npm start">
     <configuration name="archive scraper" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -79,19 +78,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-    <option name="showServicesTree" value="false" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -103,7 +90,9 @@
       <option name="presentableId" value="Default" />
       <updated>1584767768714</updated>
       <workItem from="1584767769928" duration="46027000" />
-      <workItem from="1585427267727" duration="32000" />
+      <workItem from="1585427267727" duration="1509000" />
+      <workItem from="1592453969309" duration="355000" />
+      <workItem from="1625772354630" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -210,11 +199,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585355875451</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="disabled x axis scrolling on mobile">
+      <created>1585427365315</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585427365315</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="working" />
@@ -231,17 +227,18 @@
     <MESSAGE value="Using cookies to auto-save progress" />
     <MESSAGE value="longer expiration time for cookies" />
     <MESSAGE value="more available dates and prevent scrolling x" />
-    <option name="LAST_COMMIT_MESSAGE" value="more available dates and prevent scrolling x" />
+    <MESSAGE value="disabled x axis scrolling on mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="disabled x axis scrolling on mobile" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585355875303">
+    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585427365145">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585355875303" />
-    <state x="17" y="100" key="DiffContextDialog" timestamp="1585355855972">
+    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585427365145" />
+    <state x="17" y="100" key="DiffContextDialog" timestamp="1585427359457">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="17" y="100" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1585355855972" />
+    <state x="17" y="100" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1585427359457" />
     <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1585368492126">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -270,6 +267,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="143" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1584770335444" />
+    <state x="378" y="223" width="683" height="476" key="find.popup" timestamp="1592454032159">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="378" y="223" width="683" height="476" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1592454032159" />
     <state x="25" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1585355731831">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

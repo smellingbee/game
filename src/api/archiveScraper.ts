@@ -4,7 +4,8 @@ export const getAnswersOfDate = async (date: Date): Promise<string[]> => {
     const month = monthNames[date.getMonth()];
     const day = date.getDate();
     const year = date.getFullYear();
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const proxyUrl = 'https://cors.bridged.cc/';
     return await fetch(`${proxyUrl}https://spellingbeeanswers.com/spelling-bee-${month}-${day}-${year}-answers`,
         {mode: 'cors'})
         .then(response => response.text())
