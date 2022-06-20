@@ -5,19 +5,27 @@ export const getAnswersOfDate = async (date: Date): Promise<string[]> => {
     const day = date.getDate();
     const year = date.getFullYear();
     // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const proxyUrl = 'https://cors.bridged.cc/';
-    return await fetch(`${proxyUrl}https://spellingbeeanswers.com/spelling-bee-${month}-${day}-${year}-answers`,
+    // const proxyUrl = 'https://cors.bridged.cc/';
+    const proxyUrl = 'https://api.allorigins.win/get?url=';
+    const url = `${proxyUrl}https://spellingbeeanswers.com/spelling-bee-${month}-${day}-${year}-answers`;
+    console.log(url)
+    return await fetch(url,
         {mode: 'cors'})
         .then(response => response.text())
         .then(html => {
-            let answerDivs = new DOMParser().parseFromString(html, "text/html").getElementsByClassName('aanswer');
-            const answers: string[] = [];
-            for (let i = 0; i < answerDivs.length; i++) {
-                let answer = answerDivs.item(i)?.innerHTML.substring(6);
-                if (answer != null) {
-                    answers.push(answer);
+            const answers: string[] = []
+            const parser = new DOMParser().parseFromString(html, "text/html");
+            const links = parser.getElementsByTagName("a");
+            for (let i = 0; i < links.length; i++) {
+                const link = links.item(i);
+                if (link?.getAttribute("href")?.includes("wordunscrambler.org/")) {
+                    const textContent: string | null = link.textContent;
+                    if (textContent) {
+                        answers.push(textContent.split("+")[0])
+                    }
                 }
             }
+            console.log(answers)
             return answers;
         })
 };
@@ -28,7 +36,7 @@ export const getAllowedLetters = (answers: string[]): string[] => {
         if (!letters.includes(letter))
             letters.push(letter);
     }
-    return letters;
+    return letters.slice(1);
 };
 
 export const getCoreLetter = (allowedLetters: string[], answers: string[]): string => {

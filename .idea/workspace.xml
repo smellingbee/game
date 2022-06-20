@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/archiveScraper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/archiveScraper.ts" afterDir="false" />
     </list>
@@ -45,7 +47,18 @@
       <recent name="$PROJECT_DIR$/src/components/static" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="Jest.archiveScraper.should get answers for date">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="archive scraper" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -56,6 +69,20 @@
       <test-file value="$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts" />
       <test-names>
         <test-name value="archive scraper" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="archiveScraper.should get answers for date" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts" />
+      <test-names>
+        <test-name value="archiveScraper" />
+        <test-name value="should get answers for date" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -74,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.archiveScraper.should get answers for date" />
         <item itemvalue="Jest.archive scraper" />
       </list>
     </recent_temporary>
@@ -92,7 +120,8 @@
       <workItem from="1584767769928" duration="46027000" />
       <workItem from="1585427267727" duration="1509000" />
       <workItem from="1592453969309" duration="355000" />
-      <workItem from="1625772354630" duration="156000" />
+      <workItem from="1625772354630" duration="1161000" />
+      <workItem from="1655692292625" duration="1877000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -206,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585427365315</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed cors proxy">
+      <created>1625772671381</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1625772671381</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,52 +264,19 @@
     <MESSAGE value="longer expiration time for cookies" />
     <MESSAGE value="more available dates and prevent scrolling x" />
     <MESSAGE value="disabled x axis scrolling on mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="disabled x axis scrolling on mobile" />
+    <MESSAGE value="Fixed cors proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed cors proxy" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="176" y="64" key="CommitChangelistDialog2" timestamp="1585427365145">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="176" y="64" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1585427365145" />
-    <state x="17" y="100" key="DiffContextDialog" timestamp="1585427359457">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="17" y="100" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1585427359457" />
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom" timestamp="1585368492126">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1585368492126" />
-    <state width="1398" height="230" key="GridCell.Tab.0.center" timestamp="1585368492125">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1585368492125" />
-    <state width="1398" height="230" key="GridCell.Tab.0.left" timestamp="1585368492109">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1585368492109" />
-    <state width="1398" height="230" key="GridCell.Tab.0.right" timestamp="1585368492125">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state width="1398" height="230" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1585368492125" />
-    <state x="308" y="211" key="IDE.errors.dialog" timestamp="1584817829849">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="308" y="211" key="IDE.errors.dialog/0.23.1440.877@0.23.1440.877" timestamp="1584817829849" />
-    <state x="397" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1585427267497">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="397" y="294" key="com.intellij.ide.util.TipDialog/0.23.1440.877@0.23.1440.877" timestamp="1585427267497" />
-    <state x="143" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584770335444">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="143" y="385" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877@0.23.1440.877" timestamp="1584770335444" />
-    <state x="378" y="223" width="683" height="476" key="find.popup" timestamp="1592454032159">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="378" y="223" width="683" height="476" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1592454032159" />
-    <state x="25" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1585355731831">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="25" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1585355731831" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
