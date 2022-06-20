@@ -8,7 +8,6 @@ export const getAnswersOfDate = async (date: Date): Promise<string[]> => {
     // const proxyUrl = 'https://cors.bridged.cc/';
     const proxyUrl = 'https://api.allorigins.win/get?url=';
     const url = `${proxyUrl}https://spellingbeeanswers.com/spelling-bee-${month}-${day}-${year}-answers`;
-    console.log(url)
     return await fetch(url,
         {mode: 'cors'})
         .then(response => response.text())
@@ -21,11 +20,10 @@ export const getAnswersOfDate = async (date: Date): Promise<string[]> => {
                 if (link?.getAttribute("href")?.includes("wordunscrambler.org/")) {
                     const textContent: string | null = link.textContent;
                     if (textContent) {
-                        answers.push(textContent.split("+")[0])
+                        answers.push(textContent.split("+")[0].substr(1))
                     }
                 }
             }
-            console.log(answers)
             return answers;
         })
 };
@@ -36,7 +34,7 @@ export const getAllowedLetters = (answers: string[]): string[] => {
         if (!letters.includes(letter))
             letters.push(letter);
     }
-    return letters.slice(1);
+    return letters;
 };
 
 export const getCoreLetter = (allowedLetters: string[], answers: string[]): string => {

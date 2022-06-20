@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd314860-d66e-4af9-a078-b58e30a3d702" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/archiveScraper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/archiveScraper.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +120,7 @@
       <workItem from="1585427267727" duration="1509000" />
       <workItem from="1592453969309" duration="355000" />
       <workItem from="1625772354630" duration="1161000" />
-      <workItem from="1655692292625" duration="1877000" />
+      <workItem from="1655692292625" duration="3014000" />
     </task>
     <task id="LOCAL-00001" summary="working">
       <created>1584843936350</created>
@@ -242,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625772671381</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed answer scraping">
+      <created>1655694643141</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655694643141</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,18 +271,7 @@
     <MESSAGE value="more available dates and prevent scrolling x" />
     <MESSAGE value="disabled x axis scrolling on mobile" />
     <MESSAGE value="Fixed cors proxy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed cors proxy" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/api/__test__/archiveScraper.test.ts</url>
-          <line>7</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed answer scraping" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed answer scraping" />
   </component>
 </project>
